@@ -6,6 +6,7 @@ import ShoppingBasket from './components/Shoppingbasket';
 import Profile from './components/Profile';
 import Slider from './components/Slider';
 import Intro from './components/Intro'
+import Product__demo from './components/products-demo';
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
       <Slider/>
 
       <Intro/>
+
+      <Product__demo/>
 
       <Routes>
 

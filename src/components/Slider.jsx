@@ -29,8 +29,8 @@ const Slider = () => {
       delay: 6500,
       disableOnInteraction: false,
     }}
-    navigation={true}
-    modules={[EffectCoverflow, Pagination ,Autoplay]}
+    navigation= {true}
+    modules={[EffectCoverflow, Pagination ,Autoplay , Navigation]}
     className="mySwiper1"
     >
       <SwiperSlide><img src="https://cdn.khanoumi.com/cml/carousel-big/f5/81/f58129bd9b104eaf99b249f0b16341e3.jpeg "alt="image-of-swiper" /></SwiperSlide>
