@@ -14,7 +14,7 @@ const Slider = () => {
     centeredSlides={true}
     loop={true}
     slidesPerView={'1.2'}
-    spaceBetween={80}
+    spaceBetween={45}
     coverflowEffect={{
       rotate: 0,
       stretch: 0,
