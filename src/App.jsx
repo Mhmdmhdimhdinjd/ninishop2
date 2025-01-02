@@ -5,6 +5,7 @@ import Productslist from './components/Productslist'
 import ShoppingBasket from './components/Shoppingbasket';
 import Profile from './components/Profile';
 import Slider from './components/Slider';
+import Intro from './components/Intro'
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
       <Navbar/>
 
       <Slider/>
+
+      <Intro/>
 
       <Routes>
 

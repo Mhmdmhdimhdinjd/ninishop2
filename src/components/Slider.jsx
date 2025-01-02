@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import logo from '../assets/برنج نی نی 04.png'
 import { Autoplay, Pagination, Navigation , EffectCoverflow} from 'swiper/modules';
 
 const Slider = () => {
@@ -32,7 +31,7 @@ const Slider = () => {
     }}
     navigation={true}
     modules={[EffectCoverflow, Pagination ,Autoplay]}
-    className="mySwiper"
+    className="mySwiper1"
     >
       <SwiperSlide><img src="https://cdn.khanoumi.com/cml/carousel-big/f5/81/f58129bd9b104eaf99b249f0b16341e3.jpeg "alt="image-of-swiper" /></SwiperSlide>
       <SwiperSlide><img src="https://cdn.khanoumi.com/cml/carousel-big/90/30/9030af6bfff14420bb8a5371d1b8332e.jpeg" alt="image-of-swiper" /></SwiperSlide>

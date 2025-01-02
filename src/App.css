@@ -3,8 +3,16 @@
     src: url(./assets/fonts/gandom-font/Gandom.ttf);
 }
 
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
 nav {
     font-family: gandom;
+    box-shadow: 0 1px 0.5rem rgba(152, 151, 151, 0.364);
+    margin-bottom: 2rem;
 }
 
 
@@ -12,13 +20,12 @@ nav {
     width: 100%;
 }
 
-.swiper-slide {
+.mySwiper1 .swiper-slide {
     text-align: center;
-    font-size: 18px;
+    /* font-size: 18px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50%;
     border-radius: 0.5rem;
     -webkit-border-radius: 0.5rem;
     -moz-border-radius: 0.5rem;
@@ -27,18 +34,20 @@ nav {
     overflow: hidden;
 }
 
-/* تغییر رنگ دکمه‌های ناوبری با استفاده از filter */
 .swiper-button-next,
 .swiper-button-prev {
     filter: invert(30%) sepia(80%) saturate(700%) hue-rotate(360deg);
 }
 
-.swiper-pagination-bullet-active {
+.mySwiper1 .swiper-pagination-bullet-active {
     filter: invert(30%) sepia(80%) saturate(700%) hue-rotate(360deg);
 }
 
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    object-fit: cover;
+.mySwiper1 .swiper-slide img {
+
 }
+
+.mySwiper2{
+    margin-top: 2.5rem;
+}
+
