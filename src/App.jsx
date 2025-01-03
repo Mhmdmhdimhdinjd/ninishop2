@@ -5,13 +5,10 @@ import Navbar from './components/Navbar';
 import Productslist from './components/Productslist'
 import ShoppingBasket from './components/Shoppingbasket';
 import Profile from './components/Profile';
-import Slider from './components/Slider';
-import Intro from './components/Intro'
-import Product__demo from './components/products-demo';
-// import Card__intro from './components/cardintro'
 import Footer from './components/Footer';
 import store from './redux/store';
-
+import Home from './components/Home';
+import ProductDetails from './components/Productdeteils';
 
 
 function App() {
@@ -23,36 +20,21 @@ function App() {
 
         <Navbar />
 
-        <Slider />
-
-        <Intro />
-
-        <Product__demo />
-
-        <ShoppingBasket />
-
-        {/* <Card__intro/> */}
-
-        {/* <Signup/>
-
-        <Login/> */}
-
-        <Footer />
-
-
         <Routes>
+
+          <Route path="/ninishop2/Home" element={<Home/>} />
 
           <Route path="/Products" element={<Productslist />} />
 
           <Route path="/Shoppingbasket" element={<ShoppingBasket />} />
 
-          <Route path="/Profile" element={<Profile />} />
+          <Route path="/ninishop2/profile" element={<Profile />} />
 
-          {/* <Route path="/signup" element={<Signup />} />
-
-          <Route path="/login" element={<Login />} /> */}
+          <Route path="/ninishop2/product/:id" element={<ProductDetails />} />
 
         </Routes>
+
+        <Footer />
 
       </Router>
 

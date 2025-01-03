@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
 import { addItem } from '../redux/reducers/CartReducer';
 import axios from 'axios';
@@ -22,7 +23,11 @@ const ProductCard = ({ product }) => {
 
       <div >
 
-        <p className="px-2 text-gray-700 text-base">${product.price}</p>
+        <Link to={`/ninishop2/product/${product.id}`}>
+
+          <p className="px-2 text-gray-700 text-base">${product.price}</p>
+
+        </Link>
 
         {/* <div className=' flex flex-col justify-center bg-blue-500 h-9 '>
         <p className='text-center addtocart'>افزودن به سبد خرید</p>

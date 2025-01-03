@@ -12,7 +12,7 @@ const Signup = () => {
   const handleSignup = () => {
     const user = { username, password };
     dispatch(registerUser(user));
-    navigate('/');
+    navigate('/home');
   };
 
   return (
