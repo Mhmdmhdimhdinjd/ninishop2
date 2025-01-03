@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: gandom;
+    src: url(./assets/fonts/gandom-font/Gandom.ttf);
+}
+
+.productgrid{
+    font-family: gandom;
+}
+
+.custom-container {
+    padding: 32px;
+    /* حاشیه داخلی */
+    border: 4px solid #ec4899;
+    /* حاشیه صورتی */
+    position: relative;
+    /* برای محو شدن */
+}
+
+.fade-out {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 32px;
+    /* ارتفاع سایه محو */
+    background: linear-gradient(to top, #ec4899, transparent);
+    /* سایه محو به رنگ صورتی */
+}
+
+.show-all {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    /* فاصله از کارت‌های محصولات */
+    color: #ec4899;
+}

@@ -7,11 +7,12 @@ import Profile from './components/Profile';
 import Slider from './components/Slider';
 import Intro from './components/Intro'
 import Product__demo from './components/products-demo';
+// import Card__intro from './components/cardintro'
 
 
 function App() {
   return (
-    <Router>
+    <Router >
 
       <Navbar/>
 
@@ -20,6 +21,8 @@ function App() {
       <Intro/>
 
       <Product__demo/>
+
+      {/* <Card__intro/> */}
 
       <Routes>
 
