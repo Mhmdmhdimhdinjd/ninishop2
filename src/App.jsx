@@ -8,21 +8,26 @@ import Slider from './components/Slider';
 import Intro from './components/Intro'
 import Product__demo from './components/products-demo';
 // import Card__intro from './components/cardintro'
+import Footer from './components/Footer';
+
+
 
 
 function App() {
   return (
     <Router >
 
-      <Navbar/>
+      <Navbar />
 
-      <Slider/>
+      <Slider />
 
-      <Intro/>
+      <Intro />
 
-      <Product__demo/>
+      <Product__demo />
 
       {/* <Card__intro/> */}
+
+      <Footer/>
 
       <Routes>
 

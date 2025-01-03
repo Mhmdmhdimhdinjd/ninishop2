@@ -46,7 +46,7 @@ const ProductGrid = () => {
       <h1 className="text-center text-white text-3xl font-bold ">محصولات شگفت انگیز</h1>
 
 
-      <div className="w-full bg-pink-500 flex flex-wrap justify-center border-8 border-pink-500 relative p-8 pb-16 rounded-2xl">
+      <div className="w-full bg-pink-500 flex flex-wrap justify-center border-8 border-pink-500 relative p-8 pb-20 rounded-2xl">
 
 
 
@@ -56,13 +56,13 @@ const ProductGrid = () => {
 
 
 
-        <div className="absolute bottom-16 left-0 right-0 h-16 bg-gradient-to-t from-pink-500 to-transparent rounded-b-x"></div>
+        {/* <div className="absolute bottom-16 left-0 right-0 h-16 bg-gradient-to-t from-pink-500 to-transparent"></div> */}
 
         <div className=' absolute bottom-0 bg-pink-500 h-16 w-full'>
 
           <div className="w-full flex justify-center mt-4">
 
-            <button className="bg-white text-pink-500 py-2 px-4 rounded-lg shadow-md hover:bg-pink-600">
+            <button className="bg-white text-pink-500 py-2 px-4 rounded-lg shadow-md hover:bg-pink-600 hover:text-white transition duration-300">
 
               مشاهده همه
 
