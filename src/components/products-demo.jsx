@@ -24,7 +24,7 @@ const ProductGrid = () => {
 
   return (
 
-    <div className=' bg-pink-500 m-8 pt-8 rounded-xl container productgrid'>
+    <div className=' bg-pink-500 m-8 pt-8 rounded-xl  productgrid'>
 
     <h1 className="text-center text-white text-3xl font-bold ">محصولات شگفت انگیز</h1>
 
