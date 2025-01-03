@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import Navbar from './components/Navbar';
 import Productslist from './components/Productslist'
 import ShoppingBasket from './components/Shoppingbasket';
@@ -9,37 +10,47 @@ import Intro from './components/Intro'
 import Product__demo from './components/products-demo';
 // import Card__intro from './components/cardintro'
 import Footer from './components/Footer';
+import store from './redux/store';
 
 
 
 
 function App() {
   return (
-    <Router >
 
-      <Navbar />
+    <Provider store={store}>
 
-      <Slider />
+      <Router >
 
-      <Intro />
+        <Navbar />
 
-      <Product__demo />
+        <Slider />
 
-      {/* <Card__intro/> */}
+        <Intro />
 
-      <Footer/>
+        <Product__demo />
 
-      <Routes>
+        <ShoppingBasket />
 
-        <Route path="/Products" element={<Productslist />} />
+        {/* <Card__intro/> */}
 
-        <Route path="/Shoppingbasket" element={<ShoppingBasket />} />
+        <Footer />
 
-        <Route path="/Profile" element={<Profile />} />
 
-      </Routes>
+        <Routes>
 
-    </Router>
+          <Route path="/Products" element={<Productslist />} />
+
+          <Route path="/Shoppingbasket" element={<ShoppingBasket />} />
+
+          <Route path="/Profile" element={<Profile />} />
+
+        </Routes>
+
+      </Router>
+
+    </Provider>
+
   );
 }
 

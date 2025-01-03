@@ -1,37 +1,49 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../redux/reducers/CartReducer';
 import axios from 'axios';
 import '../index.css'
-import { Typography, Button } from '@mui/material';
+import { Button } from '@mui/material';
 
-const ProductCard = ({ product }) => (
-  <div className="min-w-[250px] max-w-[280px] w-full bg-white rounded overflow-hidden shadow-md m-2 flex flex-col justify-between" >
-    <img className="w-full max-w-[210px] h-48 p-2 pb-0 object-contain mx-auto" src={product.image} alt={product.title} />
-    <div className="px-4 py-4 flex flex-col">
-      <div className="font-bold text-l mb-1">{product.title}</div>
-    </div>
+const ProductCard = ({ product }) => {
 
-    <div >
+  const dispatch = useDispatch();
 
-      <p className="px-2 text-gray-700 text-base">${product.price}</p>
+  const handleAddToCart = (product) => {
+    dispatch(addItem(product));
+  };
 
-      {/* <div className=' flex flex-col justify-center bg-blue-500 h-9 '>
+  return (
+    <div className="min-w-[250px] max-w-[280px] w-full bg-white rounded overflow-hidden shadow-md m-2 flex flex-col justify-between" >
+      <img className="w-full max-w-[210px] h-48 p-2 pb-0 object-contain mx-auto" src={product.image} alt={product.title} />
+      <div className="px-4 py-4 flex flex-col">
+        <div className="font-bold text-l mb-1">{product.title}</div>
+      </div>
+
+      <div >
+
+        <p className="px-2 text-gray-700 text-base">${product.price}</p>
+
+        {/* <div className=' flex flex-col justify-center bg-blue-500 h-9 '>
         <p className='text-center addtocart'>افزودن به سبد خرید</p>
       </div> */}
 
-      <Button variant="contained" color="primary" sx={{ borderRadius: 0 , fontFamily:'gandom' }} className='w-full' >
-        
-        افزودن به سبد خرید
+        <Button variant="contained" color="primary" sx={{ borderRadius: 0, fontFamily: 'gandom' }} className='w-full' onClick={() => handleAddToCart(product)} >
 
-      </Button>
+          افزودن به سبد خرید
+
+        </Button>
+
+      </div>
 
     </div>
 
-  </div>
-
-);
+  )
+};
 
 const ProductGrid = () => {
   const [products, setProducts] = useState([]);
+
 
   useEffect(() => {
     axios.get('https://fakestoreapi.com/products')
