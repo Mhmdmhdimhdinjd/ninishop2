@@ -14,7 +14,6 @@ import store from './redux/store';
 
 
 
-
 function App() {
   return (
 
@@ -34,6 +33,10 @@ function App() {
 
         {/* <Card__intro/> */}
 
+        {/* <Signup/>
+
+        <Login/> */}
+
         <Footer />
 
 
@@ -44,6 +47,10 @@ function App() {
           <Route path="/Shoppingbasket" element={<ShoppingBasket />} />
 
           <Route path="/Profile" element={<Profile />} />
+
+          {/* <Route path="/signup" element={<Signup />} />
+
+          <Route path="/login" element={<Login />} /> */}
 
         </Routes>
 

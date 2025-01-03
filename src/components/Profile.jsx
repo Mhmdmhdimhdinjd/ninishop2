@@ -1,12 +1,26 @@
 import React from "react";
+import Signup from './Signup'
+import Login from './Login';
 
 const Profile = () => {
 
 
+
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+
+
     return (
 
-        <h1>پروفایل</h1>
+        <>
 
+            {storedUser ? <Login />
+
+                :
+
+                <Signup />
+
+            }
+        </>
     )
 }
 
