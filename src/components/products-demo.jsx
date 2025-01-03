@@ -33,7 +33,7 @@ const ProductGrid = () => {
 
 
 
-      {products.map((product) => (
+      {products.slice(0,15).map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
 
