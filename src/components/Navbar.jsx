@@ -11,6 +11,7 @@ const Navbar = () => {
 
 
 
+
         <nav className='bg-white flex items-center justify-between px-4 h-auto'>
 
             <div className='flex justify-center items-center py-3 gap-6'>
