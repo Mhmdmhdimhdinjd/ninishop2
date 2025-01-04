@@ -15,15 +15,15 @@ const Navbar = () => {
 
             <div className='flex justify-center items-center py-3 gap-6'>
 
-                <Link to="/Shoppingbasket">
+                <Link to="/ninishop2/Shoppingbasket">
                     {<ShoppingBasketIcon className=' w-6 h-6' />}
                 </Link>
 
-                <Link to="/Profile">
+                <Link to="/ninishop2/Profile">
                     {<AccountCircleIcon className=' w-7 h-7' />}
                 </Link >
 
-                <Link to="/Products">
+                <Link to="/ninishop2/Products">
                     محصولات
                 </Link >
 
@@ -31,7 +31,7 @@ const Navbar = () => {
 
             <div className='nav__right'>
 
-                <Link to="/">
+                <Link to="/ninishop2/home">
 
                     {<img src={logo} alt="logo" className='w-[64px]' />}
 

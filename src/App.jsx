@@ -26,18 +26,18 @@ function App() {
 
         <Routes>
 
-        <Route path="/Shoppingbasket" element={<PrivateRoute> <ShoppingBasket /> </PrivateRoute>} />
+        <Route path="/ninishop2/Shoppingbasket" element={<PrivateRoute> <ShoppingBasket /> </PrivateRoute>} />
 
 
-          <Route path="/Home" element={<Home/>} />
+          <Route path="/ninishop2/Home" element={<Home/>} />
 
           <Route path="/Products" element={<Productslist />} />
 
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/ninishop2/profile" element={<Profile />} />
 
-          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/ninishop2/product/:id" element={<ProductDetails />} />
 
-          <Route path="*" element={<Page_not_found />} />
+          <Route path="/ninishop2/*" element={<Page_not_found />} />
 
         </Routes>
 

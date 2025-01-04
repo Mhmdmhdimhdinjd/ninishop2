@@ -16,7 +16,7 @@ const Login = () => {
 
     if (storedUser && storedUser.username === username && storedUser.password === password) {
       dispatch(loginUser(storedUser));
-      navigate(redirectPath || '/home');
+      navigate(redirectPath);
 
     } else {
       setError('نام کاربری یا رمز عبور نادرست است');
