@@ -15,7 +15,7 @@ const CollapsibleSection = ({ title, items }) => {
       {isOpen && (
         <ul className="list-none space-y-2 mt-2">
           {items.map((item, index) => (
-            <li key={index}>{item}</li>
+            <a><li key={index}>{item}</li></a>
           ))}
         </ul>
       )}

@@ -20,25 +20,25 @@ const Footer1 = () => {
                 <div className="flex-1 text-right">
                     <h2 className="mb-4 font-bold">خدمات مشتریان</h2>
                     <ul className="list-none space-y-2">
-                        <li>پرسش‌های متداول</li>
-                        <li>راهنمای خرید و پرداخت</li>
-                        <li>رویه‌های ارسال</li>
-                        <li>شرایط مرجوعی</li>
-                        <li>خرید کالای شانس</li>
-                        <li>ارتباط با پشتیبانی</li>
+                        <a href=""><li>پرسش‌های متداول</li></a>
+                        <a href=""><li>راهنمای خرید و پرداخت</li></a>
+                        <a href=""><li>رویه‌های ارسال</li></a>
+                        <a href=""><li>شرایط مرجوعی</li></a>
+                        <a href=""><li>خرید کالای شانس</li></a>
+                        <a href=""><li>ارتباط با پشتیبانی</li></a>
                     </ul>
                 </div>
                 {/* نیمه دوم لیست */}
                 <div className="flex-1 text-right">
                     <h2 className="mb-4 font-bold">شرکت نی نی</h2>
                     <ul className="list-none space-y-2">
-                        <li>تماس با ما</li>
-                        <li>درباره ما</li>
-                        <li>فرصت‌های شغلی</li>
-                        <li>حریم خصوصی</li>
-                        <li>مجله خانومی</li>
-                        <li>خانومی بیزینس</li>
-                        <li>خانومی TV</li>
+                        <a href=""><li>تماس با ما</li></a>
+                        <a href=""><li>درباره ما</li></a>
+                        <a href=""><li>فرصت‌های شغلی</li></a>
+                        <a href=""><li>حریم خصوصی</li></a>
+                        <a href=""><li>مجله خانومی</li></a>
+                        <a href=""><li>خانومی بیزینس</li></a>
+                        <a href=""><li>خانومی TV</li></a>
                     </ul>
                 </div>
             </div>
