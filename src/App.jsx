@@ -31,7 +31,7 @@ function App() {
 
           <Route path="/ninishop2/Home" element={<Home/>} />
 
-          <Route path="/Products" element={<Productslist />} />
+          <Route path="/ninishop2/Products" element={<Productslist />} />
 
           <Route path="/ninishop2/profile" element={<Profile />} />
 
