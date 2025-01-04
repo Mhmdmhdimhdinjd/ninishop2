@@ -10,7 +10,7 @@ const PrivateRoute = ({ children }) => {
     // ذخیره مسیر فعلی در `localStorage`
     localStorage.setItem('userredirect', location.pathname);
     // هدایت به صفحه پروفایل برای ورود یا ثبت‌نام
-    return <Navigate to={'/ninishop2/profile'} />;
+    return <Navigate to={'/profile'} />;
   }
 
   return children;

@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
 
       <div >
 
-        <Link to={`/ninishop2/product/${product.id}`}>
+        <Link to={`/product/${product.id}`}>
 
           <p className="px-2 text-gray-700 text-base">${product.price}</p>
 

@@ -15,7 +15,7 @@ const Navbar = () => {
 
             <div className='flex justify-center items-center py-3 gap-6'>
 
-                <Link to="/ninishop2/Shoppingbasket">
+                <Link to="/Shoppingbasket">
                     {<ShoppingBasketIcon className=' w-6 h-6' />}
                 </Link>
 

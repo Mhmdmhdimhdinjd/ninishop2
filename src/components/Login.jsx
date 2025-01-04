@@ -11,7 +11,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    const redirectPath = JSON.parse(localStorage.getItem('userredirect')) || '/';
+    const redirectPath = localStorage.getItem('userredirect');
     const storedUser = JSON.parse(localStorage.getItem('user'));
 
     if (storedUser && storedUser.username === username && storedUser.password === password) {
