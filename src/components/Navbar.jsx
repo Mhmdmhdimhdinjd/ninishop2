@@ -1,11 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
+import {useLocation } from 'react-router-dom';
 import '../App.css'
 import { ShoppingBasketOutlined as ShoppingBasketIcon, AccountCircleOutlined as AccountCircleIcon } from '@mui/icons-material';
 import logo from '../assets/برنج نی نی 04.png'
 
 
 const Navbar = () => {
+
+    const location = useLocation();
 
     return (
 
@@ -21,7 +24,11 @@ const Navbar = () => {
                 </Link>
 
                 <Link to="/ninishop2/Profile">
-                    {<AccountCircleIcon className=' w-7 h-7' />}
+                    <div onClick={() =>(
+                        localStorage.setItem('userredirect', location.pathname)
+                    )}>
+                        {<AccountCircleIcon className=' w-7 h-7' />}
+                    </div>
                 </Link >
 
                 <Link to="/ninishop2/Products">

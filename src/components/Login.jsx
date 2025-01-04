@@ -26,7 +26,7 @@ const Login = () => {
 
     } else {
       setError('نام کاربری یا رمز عبور نادرست است');
-    }ki
+    }
   };
 
   return (

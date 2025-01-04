@@ -16,7 +16,7 @@ const Profile = () => {
         return (
             <Signup />
         );
-    }else if (logeduser === null) {
+    } else if (logeduser === null) {
         return (
 
             <Login />
@@ -25,9 +25,9 @@ const Profile = () => {
 
     return (
 
+        
 
-
-        <Navigate to={redirectPath} />
+        <Navigate to={redirectPath === "/ninishop2/profile" ? '/ninishop2/home' : redirectPath} />
 
     )
 };
