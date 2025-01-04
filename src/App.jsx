@@ -15,10 +15,12 @@ import Page_not_found from './components/page-not-found.jsx';
 
 function App() {
 
-  
+
   return (
 
     <Provider store={store}>
+
+
 
       <Router >
 
@@ -26,16 +28,15 @@ function App() {
 
         <Routes>
 
-        <Route path="/ninishop2/Shoppingbasket" element={<PrivateRoute> <ShoppingBasket /> </PrivateRoute>} />
+          <Route path="/ninishop2/Shoppingbasket" element={<PrivateRoute> <ShoppingBasket /> </PrivateRoute>} />
 
+          <Route path="/ninishop2/Home" element={<PrivateRoute><Home /></PrivateRoute>} />
 
-          <Route path="/ninishop2/Home" element={<Home/>} />
+          <Route path="/ninishop2/Products" element={<PrivateRoute><Productslist /></PrivateRoute>} />
 
-          <Route path="/ninishop2/Products" element={<Productslist />} />
+          <Route path="/ninishop2/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
 
-          <Route path="/ninishop2/profile" element={<Profile />} />
-
-          <Route path="/ninishop2/product/:id" element={<ProductDetails />} />
+          <Route path="/ninishop2/product/:id" element={<PrivateRoute><ProductDetails /></PrivateRoute>} />
 
           <Route path="/ninishop2/*" element={<Page_not_found />} />
 

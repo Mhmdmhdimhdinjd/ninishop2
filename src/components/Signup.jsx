@@ -10,12 +10,14 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const handleSignup = () => {
-    const redirectPath = localStorage.getItem('userredirect') ;
+    let redirectPath = localStorage.getItem('userredirect') ;
 
 
     const user = { username, password };
     dispatch(registerUser(user));
-    navigate(redirectPath);
+    navigate(redirectPath || '/ninishop2/home');
+    localStorage.removeItem('userredirect')
+    redirectPath = null
   };
 
   return (

@@ -33,78 +33,45 @@ const ProductDetails = () => {
   return (
 
 
-    <div>
+    <div className="w-full rounded-3xl">
+  <div className="p-4 text-gray-500">
+    <p>{product.category}</p>
+  </div>
 
-      <div className='w-full p-4'>
-
-        <p class="text-xs text-gray-400 text-right">{product.category.slice(0, 40)}</p>
-
+  <div className="grid grid-cols-3">
+    <div className="p-4 custom:p-10 border-r-2 border-gray-300 flex flex-col justify-center">
+      <div className="text-center">
+        {product.price} $
       </div>
 
-      <div class="flex">
-
-        <div class="w-[330px] bg-gray-300 p-6">
-
-
-          <Button variant="contained" color="primary" sx={{ borderRadius: 0, fontFamily: 'gandom' }} className='w-full' onClick={() => addToCart(product)} >
-
-            افزودن به سبد خرید
-
-          </Button>
-
-
-        </div>
-
-        <div class="flex-1 flex ">
-
-          <div class="flex-1 ">
-
-            <p class="text-xl text-black text-right">{product.title}</p>
-
-            {/* <!-- محتوای سمت راست بالا --> */}
-
-          </div>
-
-          <div class="flex-1">
-
-            <img className="w-full max-w-[400px] p-2 pb-0 object-contain mx-auto" src={product.image} alt={product.title} />
-
-            {/* <!-- محتوای سمت راست پایین --> */}
-
-          </div>
-
-        </div>
-
+      <div className="mt-6 bg-aquamarine text-green-500 text-center rounded-lg">
+        <h4>امتیاز این محصول از مجموع {product.rating.count} نظر {product.rating.rate} از 5 است</h4>
       </div>
 
-
+      <div className="w-full mt-4">
+        
+        <Button variant='contained' className='w-full text-center text-white text-bold' color='primary'>افزودن به سبد خرید</Button>
+      </div>
     </div>
 
+    <div className="p-4 custom:p-8">
+      <div className="mb-6 text-2xl">
+        {product.title}
+      </div>
+
+      <div>
+        <h4>{product.description}</h4>
+      </div>
+    </div>
+
+    <div className=" w-full border-l-2 border-gray-300">
+      <img src={product.image} alt="" className="w-full max-w-[350px]" />
+    </div>
+  </div>
+</div>
 
 
 
-    // <div className="min-w-[250px] max-w-[280px] w-full bg-white rounded overflow-hidden shadow-md m-2 flex flex-col justify-between" >
-    //   <img className="w-full max-w-[210px] h-48 p-2 pb-0 object-contain mx-auto" src={product.image} alt={product.title} />
-    //   <div className="px-4 py-4 flex flex-col">
-    //     <div className="font-bold text-l mb-1">{product.title}</div>
-    //   </div>
-
-    //   <div >
-
-
-    //       <p className="px-2 text-gray-700 text-base">${product.price}</p>
-
-
-
-    // <Button variant="contained" color="primary" sx={{ borderRadius: 0, fontFamily: 'gandom' }} className='w-full' onClick={() => addToCart(product)} >
-
-    //   افزودن به سبد خرید
-
-    // </Button>
-
-    //   </div>
-
-    // </div>
   );
 };
 

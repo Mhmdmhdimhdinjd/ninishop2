@@ -6,11 +6,10 @@ export default {
   ],
   theme: {
     extend: {
-      boxShadow: {
-        'pink-70': '0 -70px 30px -20px rgba(255, 192, 203, 0.5)', 
-         }
-      },
+         screens: { 
+          'custom': '835px', 
+  },
     },
     plugins: [],
-  }
+  }}
 

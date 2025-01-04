@@ -11,16 +11,18 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    const redirectPath = localStorage.getItem('userredirect');
+    let redirectPath = localStorage.getItem('userredirect');
     const storedUser = JSON.parse(localStorage.getItem('user'));
 
     if (storedUser && storedUser.username === username && storedUser.password === password) {
       dispatch(loginUser(storedUser));
-      navigate(redirectPath);
+      navigate(redirectPath || '/ninishop2/home');
+      localStorage.removeItem('userredirect')
+      redirectPath = null
 
     } else {
       setError('نام کاربری یا رمز عبور نادرست است');
-    }
+    }ki
   };
 
   return (

@@ -1,4 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+import axios from 'axios';
+
+import { Link } from 'react-router-dom';
+
+import { Button } from '@mui/material';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,11 +17,16 @@ import 'swiper/css/pagination';
 // import required modules
 import { FreeMode } from 'swiper/modules';
 
-//import product img
-import logo from '../assets/برنج نی نی 04.png'
-
-
 export default function Intro() {
+
+    const [Products, setProducts] = useState([])
+
+    useEffect(() => {
+        axios.get('https://fakestoreapi.com/products')
+            .then((response) => setProducts(response.data))
+            .catch((error) => console.error('Error fetching data:', error));
+    }, []);
+
     return (
         <>
 
@@ -26,220 +37,52 @@ export default function Intro() {
                     spaceBetween={10}
                     freeMode={true}
                     modules={[FreeMode]}
-                    className="mySwiper2"
+                    className="mySwiper2 "
                 >
 
-                    <SwiperSlide className=' max-w-[180px] min-h-[320px] rounded-md border-2 border-red-500 text-right'>
+                    {Products.slice(0,).map((product) => {
 
-                        <div className='product-img-cotainer'>
-                            <img src={logo} alt="" />
-                        </div>
+                        return (
 
-                        <div className='product-name-section'>
-                            <p>اسپری ضد جوش بدن 2 سبوما 250 میل</p>
-                        </div>
+                            < SwiperSlide key={product.id} product={product} className=' max-w-[180px] bg-white rounded-xl border-2 border-gray-500 text-right flex flex-col justify-between overflow-hidden' >
 
-                        <div className='product-price-section'>
-                            <p>120,000</p>
-                        </div>
+                                <img className="w-full max-w-[160px] h-48 p-2 pb-0 object-contain mx-auto" src={product.image} alt={product.title} />
+                                <div className="px-4 py-4 flex flex-col h-[120px]">
+                                    <Link to={`/ninishop2/product/${product.id}`}>
 
-                    </SwiperSlide>
+                                        <div className="font-bold text-l mb-1">
+                                            {product.title.split(' ').length > 6 ?
+                                                product.title.split(' ').slice(0, 6).join(' ') + '...' :
+                                                product.title
 
-                    <SwiperSlide className=' max-w-[180px] min-h-[320px] rounded-md border-2 border-red-500 text-right'>
+                                            }
+                                        </div>
+                                    </Link>
+                                </div>
 
-                        <div className='product-img-cotainer'>
-                            <img src={logo} alt="" />
-                        </div>
+                                <div >
 
-                        <div className='product-name-section'>
-                            <p>اسپری ضد جوش بدن 2 سبوما 250 میل</p>
-                        </div>
 
-                        <div className='product-price-section'>
-                            <p>120,000</p>
-                        </div>
+                                    <p className="px-2 text-gray-700 text-base">${product.price}</p>
 
-                    </SwiperSlide>
 
-                    <SwiperSlide className=' max-w-[180px] min-h-[320px] rounded-md border-2 border-red-500 text-right'>
+                                    <Button variant="contained" color="primary" sx={{ borderRadius: 0, fontFamily: 'gandom' }} className='w-full' onClick={() => handleAddToCart(product)} >
 
-                        <div className='product-img-cotainer'>
-                            <img src={logo} alt="" />
-                        </div>
+                                        افزودن به سبد خرید
 
-                        <div className='product-name-section'>
-                            <p>اسپری ضد جوش بدن 2 سبوما 250 میل</p>
-                        </div>
+                                    </Button>
 
-                        <div className='product-price-section'>
-                            <p>120,000</p>
-                        </div>
+                                </div>
 
-                    </SwiperSlide>
+                            </SwiperSlide>
 
-                    <SwiperSlide className=' max-w-[180px] min-h-[320px] rounded-md border-2 border-red-500 text-right'>
+                        )
+                    })}
 
-                        <div className='product-img-cotainer'>
-                            <img src={logo} alt="" />
-                        </div>
-
-                        <div className='product-name-section'>
-                            <p>اسپری ضد جوش بدن 2 سبوما 250 میل</p>
-                        </div>
-
-                        <div className='product-price-section'>
-                            <p>120,000</p>
-                        </div>
-
-                    </SwiperSlide>
-
-                    <SwiperSlide className=' max-w-[180px] min-h-[320px] rounded-md border-2 border-red-500 text-right'>
-
-                        <div className='product-img-cotainer'>
-                            <img src={logo} alt="" />
-                        </div>
-
-                        <div className='product-name-section'>
-                            <p>اسپری ضد جوش بدن 2 سبوما 250 میل</p>
-                        </div>
-
-                        <div className='product-price-section'>
-                            <p>120,000</p>
-                        </div>
-
-                    </SwiperSlide>
-
-                    <SwiperSlide className=' max-w-[180px] min-h-[320px] rounded-md border-2 border-red-500 text-right'>
-
-                        <div className='product-img-cotainer'>
-                            <img src={logo} alt="" />
-                        </div>
-
-                        <div className='product-name-section'>
-                            <p>اسپری ضد جوش بدن 2 سبوما 250 میل</p>
-                        </div>
-
-                        <div className='product-price-section'>
-                            <p>120,000</p>
-                        </div>
-
-                    </SwiperSlide>
-
-                    <SwiperSlide className=' max-w-[180px] min-h-[320px] rounded-md border-2 border-red-500 text-right'>
-
-                        <div className='product-img-cotainer'>
-                            <img src={logo} alt="" />
-                        </div>
-
-                        <div className='product-name-section'>
-                            <p>اسپری ضد جوش بدن 2 سبوما 250 میل</p>
-                        </div>
-
-                        <div className='product-price-section'>
-                            <p>120,000</p>
-                        </div>
-
-                    </SwiperSlide>
-
-                    <SwiperSlide className=' max-w-[180px] min-h-[320px] rounded-md border-2 border-red-500 text-right'>
-
-                        <div className='product-img-cotainer'>
-                            <img src={logo} alt="" />
-                        </div>
-
-                        <div className='product-name-section'>
-                            <p>اسپری ضد جوش بدن 2 سبوما 250 میل</p>
-                        </div>
-
-                        <div className='product-price-section'>
-                            <p>120,000</p>
-                        </div>
-
-                    </SwiperSlide>
-
-                    <SwiperSlide className=' max-w-[180px] min-h-[320px] rounded-md border-2 border-red-500 text-right'>
-
-                        <div className='product-img-cotainer'>
-                            <img src={logo} alt="" />
-                        </div>
-
-                        <div className='product-name-section'>
-                            <p>اسپری ضد جوش بدن 2 سبوما 250 میل</p>
-                        </div>
-
-                        <div className='product-price-section'>
-                            <p>120,000</p>
-                        </div>
-
-                    </SwiperSlide>
-
-                    <SwiperSlide className=' max-w-[180px] min-h-[320px] rounded-md border-2 border-red-500 text-right'>
-
-                        <div className='product-img-cotainer'>
-                            <img src={logo} alt="" />
-                        </div>
-
-                        <div className='product-name-section'>
-                            <p>اسپری ضد جوش بدن 2 سبوما 250 میل</p>
-                        </div>
-
-                        <div className='product-price-section'>
-                            <p>120,000</p>
-                        </div>
-
-                    </SwiperSlide>
-
-                    <SwiperSlide className=' max-w-[180px] min-h-[320px] rounded-md border-2 border-red-500 text-right'>
-
-                        <div className='product-img-cotainer'>
-                            <img src={logo} alt="" />
-                        </div>
-
-                        <div className='product-name-section'>
-                            <p>اسپری ضد جوش بدن 2 سبوما 250 میل</p>
-                        </div>
-
-                        <div className='product-price-section'>
-                            <p>120,000</p>
-                        </div>
-
-                    </SwiperSlide>
-
-                    <SwiperSlide className=' max-w-[180px] min-h-[320px] rounded-md border-2 border-red-500 text-right'>
-
-                        <div className='product-img-cotainer'>
-                            <img src={logo} alt="" />
-                        </div>
-
-                        <div className='product-name-section'>
-                            <p>اسپری ضد جوش بدن 2 سبوما 250 میل</p>
-                        </div>
-
-                        <div className='product-price-section'>
-                            <p>120,000</p>
-                        </div>
-
-                    </SwiperSlide>
-
-                    <SwiperSlide className=' max-w-[180px] min-h-[320px] rounded-md border-2 border-red-500 text-right'>
-
-                        <div className='product-img-cotainer'>
-                            <img src={logo} alt="" />
-                        </div>
-
-                        <div className='product-name-section'>
-                            <p>اسپری ضد جوش بدن 2 سبوما 250 میل</p>
-                        </div>
-
-                        <div className='product-price-section'>
-                            <p>120,000</p>
-                        </div>
-
-                    </SwiperSlide>
 
                 </Swiper>
 
-            </div>
+            </div >
         </>
     );
 }

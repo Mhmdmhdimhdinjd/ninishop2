@@ -18,20 +18,18 @@ const ProductCard = ({ product }) => {
     <div className="min-w-[250px] max-w-[280px] w-full bg-white rounded overflow-hidden shadow-md m-2 flex flex-col justify-between" >
       <img className="w-full max-w-[210px] h-48 p-2 pb-0 object-contain mx-auto" src={product.image} alt={product.title} />
       <div className="px-4 py-4 flex flex-col">
-        <div className="font-bold text-l mb-1">{product.title}</div>
+
+        <Link to={`/ninishop2/product/${product.id}`}>
+
+          <div className="font-bold text-l mb-1">{product.title}</div>
+
+        </Link>
+
       </div>
 
       <div >
 
-        <Link to={`/ninishop2/product/${product.id}`}>
-
-          <p className="px-2 text-gray-700 text-base">${product.price}</p>
-
-        </Link>
-
-        {/* <div className=' flex flex-col justify-center bg-blue-500 h-9 '>
-        <p className='text-center addtocart'>افزودن به سبد خرید</p>
-      </div> */}
+        <p className="px-2 text-gray-700 text-base">${product.price}</p>
 
         <Button variant="contained" color="primary" sx={{ borderRadius: 0, fontFamily: 'gandom' }} className='w-full' onClick={() => handleAddToCart(product)} >
 
@@ -79,11 +77,15 @@ const ProductGrid = () => {
 
           <div className="w-full flex justify-center mt-4">
 
-            <button className="bg-white text-pink-500 py-2 px-4 rounded-lg shadow-md hover:bg-pink-600 hover:text-white transition duration-300">
+            <Link to={'/ninishop2/Products'}>
 
-              مشاهده همه
+              <button className="bg-white text-pink-500 py-2 px-4 rounded-lg shadow-md hover:bg-pink-600 hover:text-white transition duration-300">
 
-            </button>
+                مشاهده همه
+
+              </button>
+
+            </Link>
 
           </div>
 
