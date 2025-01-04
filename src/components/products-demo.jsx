@@ -54,6 +54,10 @@ const ProductGrid = () => {
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
+  if (products.length === 0) {
+    return <div>Loading...</div>;
+  }
+
   return (
 
     <div className=' bg-pink-500 mx-4 my-8 pt-8 rounded-xl  productgrid'>

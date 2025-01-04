@@ -22,18 +22,18 @@ const ProductCard = ({ product }) => {
 
                 <Link to={`/ninishop2/product/${product.id}`}>
 
-                <div className="font-bold text-l mb-1">{product.title}</div>
-                
+                    <div className="font-bold text-l mb-1">{product.title}</div>
+
                 </Link>
             </div>
 
             <div >
 
-                
 
-                    <p className="px-2 text-gray-700 text-base">${product.price}</p>
 
-                
+                <p className="px-2 text-gray-700 text-base">${product.price}</p>
+
+
 
                 {/* <div className=' flex flex-col justify-center bg-blue-500 h-9 '>
         <p className='text-center addtocart'>افزودن به سبد خرید</p>
@@ -53,7 +53,7 @@ const ProductCard = ({ product }) => {
 };
 
 
-const ProductGrid = () => {
+const Productslist = () => {
     const [products, setProducts] = useState([]);
 
 
@@ -62,6 +62,11 @@ const ProductGrid = () => {
             .then((response) => setProducts(response.data))
             .catch((error) => console.error('Error fetching data:', error));
     }, []);
+
+
+    if (products.length === 0) {
+        return <div>Loading...</div>;
+    }
 
     return (
 
@@ -90,14 +95,6 @@ const ProductGrid = () => {
 };
 
 
-const Productslist = () => {
 
-    return (
-
-        <ProductGrid />
-
-    )
-
-}
 
 export default Productslist

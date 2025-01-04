@@ -27,6 +27,10 @@ export default function Intro() {
             .catch((error) => console.error('Error fetching data:', error));
     }, []);
 
+    if (Products.length === 0) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <>
 
