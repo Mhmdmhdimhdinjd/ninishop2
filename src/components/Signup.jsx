@@ -2,22 +2,25 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../redux/reducers/AuthSlice';
 import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+
 
 const Signup = () => {
+
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleSignup = () => {
-    let redirectPath = localStorage.getItem('userredirect') ;
+    let redirectPath = localStorage.getItem('userredirect');
 
 
     const user = { username, password };
     dispatch(registerUser(user));
-    navigate(redirectPath || '/ninishop2/home');
-    localStorage.removeItem('userredirect')
-    redirectPath = null
+    navigate(redirectPath)
+    // localStorage.removeItem('userredirect')
   };
 
   return (
@@ -37,7 +40,7 @@ const Signup = () => {
         onChange={(e) => setPassword(e.target.value)}
         className="mb-2 p-2 border rounded"
       />
-      <button onClick={handleSignup()} className="bg-blue-500 text-white p-2 rounded">
+      <button onClick={handleSignup} className="bg-blue-500 text-white p-2 rounded">
         ثبت‌نام
       </button>
     </div>

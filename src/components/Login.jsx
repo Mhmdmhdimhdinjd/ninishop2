@@ -1,24 +1,28 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../redux/reducers/AuthSlice';
-import { useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const Login = () => {
+
+
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleLogin = () => {
     let redirectPath = localStorage.getItem('userredirect');
     const storedUser = JSON.parse(localStorage.getItem('user'));
 
-    if (storedUser && storedUser.username === username && storedUser.password === password) {
+    if ( storedUser.username === username && storedUser.password === password) {
       dispatch(loginUser(storedUser));
-      navigate(redirectPath || '/ninishop2/home');
-      localStorage.removeItem('userredirect')
-      redirectPath = null
+    <Navigate to={redirectPath}/>;
+      
+      // localStorage.removeItem('userredirect')
+      // redirectPath = null
 
     } else {
       setError('نام کاربری یا رمز عبور نادرست است');

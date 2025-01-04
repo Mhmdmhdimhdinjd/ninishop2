@@ -7,13 +7,15 @@ import Profile from './components/Profile';
 import store from './redux/store';
 import Home from './components/Home';
 import ProductDetails from './components/Productdeteils';
-// import PrivateRoute from './components/PrivateRoute.jsx'
+import PrivateRoute from './components/PrivateRoute.jsx'
 import Page_not_found from './components/page-not-found.jsx';
-import Layout from './components/layout.jsx';
+// import Layout from './components/layout.jsx';
+import Navbar from './components/Navbar.jsx';
+import Footer from './components/Footer.jsx';
+
+
 
 function App() {
-
-
 
 
   return (
@@ -26,17 +28,17 @@ function App() {
 
         <Routes>
 
-          <Route path="/ninishop2/Shoppingbasket" element={<Layout> <ShoppingBasket /></Layout>  }/>
+          <Route path="/ninishop2/Shoppingbasket" element={<PrivateRoute> <Navbar /> <ShoppingBasket /><Footer /> </PrivateRoute>} />
 
-          <Route path="/ninishop2/Home" element={ <Layout><Home /> </Layout> }/>
+          <Route path="/ninishop2/Home" element={<PrivateRoute> <Navbar /><Home /> <Footer /></PrivateRoute>} />
 
-          <Route path="/ninishop2/Products" element= {<Layout><Productslist /> </Layout> }/>
+          <Route path="/ninishop2/Products" element={<PrivateRoute> <Navbar /><Productslist /> <Footer /></PrivateRoute>} />
 
-          <Route path="/ninishop2/profile" element={<Layout><Profile /> </Layout> }/>
+          <Route path="/ninishop2/profile" element={<><Navbar /> <Profile /> <Footer /></>} />
 
-          <Route path="/ninishop2/product/:id" element={<Layout><ProductDetails /> </Layout> }/>
+          <Route path="/ninishop2/product/:id" element={<PrivateRoute> <Navbar /><ProductDetails /> <Footer /></PrivateRoute>} />
 
-          <Route path="/ninishop2" element={<Layout> <Home /> </Layout> }/>
+          <Route path="/ninishop2" element={<><Navbar /><Home /> <Footer /></>} />
 
           <Route path="/ninishop2/*" element={<Page_not_found />} />
 

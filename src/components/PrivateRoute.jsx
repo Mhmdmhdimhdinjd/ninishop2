@@ -1,15 +1,16 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 
 const PrivateRoute = ({ children }) => {
-  const user = useSelector((state) => state.auth.user);
+  const storedUser = JSON.parse(localStorage.getItem('user')) || null;
   const location = useLocation();
+  const logeduser = useSelector((state) => state.auth.logeduser);
 
-  if (!user) {
-    // ذخیره مسیر فعلی در `localStorage`
+
+  if (storedUser === null || logeduser === null) {
     localStorage.setItem('userredirect', location.pathname);
-    // هدایت به صفحه پروفایل برای ورود یا ثبت‌نام
     return <Navigate to="/ninishop2/profile" />;
   }
 

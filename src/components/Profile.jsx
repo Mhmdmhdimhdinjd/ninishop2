@@ -1,27 +1,35 @@
-import React from "react";
-import Signup from './Signup'
-import Login from './Login';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+import Signup from './Signup';
+import Login from './Login'
 
 const Profile = () => {
 
 
+    const storedUser = JSON.parse(localStorage.getItem('user')) || null;
+    const logeduser = useSelector((state) => state.auth.logeduser);
+    let redirectPath = localStorage.getItem('userredirect');
 
-    const storedUser = JSON.parse(localStorage.getItem('user'));
 
+    if (storedUser === null) {
+        return (
+            <Signup />
+        );
+    }else if (logeduser === null) {
+        return (
+
+            <Login />
+        )
+    }
 
     return (
 
-        <>
 
-            {storedUser ? <Login />
 
-                :
+        <Navigate to={redirectPath} />
 
-                <Signup />
-
-            }
-        </>
     )
-}
+};
 
-export default Profile
+export default Profile;
