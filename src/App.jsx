@@ -9,7 +9,6 @@ import Home from './components/Home';
 import ProductDetails from './components/Productdeteils';
 import PrivateRoute from './components/PrivateRoute.jsx'
 import Page_not_found from './components/page-not-found.jsx';
-// import Layout from './components/layout.jsx';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 

@@ -70,9 +70,9 @@ const Productslist = () => {
 
     return (
 
-        <div className='productgrid pt-4'>
+        <div className='productgrid'>
 
-            <h1 className="text-right text-black text-3xl font-bold">محصولات شگفت انگیز</h1>
+            <h1 className="text-right text-black text-3xl font-bold m-4">محصولات شگفت انگیز</h1>
 
 
             <div className="w-full flex flex-wrap justify-center p-8 border-t-2 border-black mt-6">
