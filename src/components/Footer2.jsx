@@ -46,7 +46,7 @@ const Footer2 = () => {
         ]}
       />
       <CollapsibleSection
-        title="شرکت خانومی"
+        title="شرکت نی نی"
         items={[
           "تماس با ما",
           "درباره ما",

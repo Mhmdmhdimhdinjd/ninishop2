@@ -30,7 +30,7 @@ const Footer1 = () => {
                 </div>
                 {/* نیمه دوم لیست */}
                 <div className="flex-1 text-right">
-                    <h2 className="mb-4 font-bold">شرکت خانومی</h2>
+                    <h2 className="mb-4 font-bold">شرکت نی نی</h2>
                     <ul className="list-none space-y-2">
                         <li>تماس با ما</li>
                         <li>درباره ما</li>
