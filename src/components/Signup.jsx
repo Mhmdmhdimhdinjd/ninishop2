@@ -10,26 +10,29 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const handleSignup = () => {
+    const redirectPath = localStorage.getItem('userredirect') ;
+
+
     const user = { username, password };
     dispatch(registerUser(user));
-    navigate('/home');
+    navigate(redirectPath);
   };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-2xl mb-4">ثبت‌نام</h1>
-      <input 
-        type="text" 
-        placeholder="نام کاربری" 
-        value={username} 
-        onChange={(e) => setUsername(e.target.value)} 
+      <input
+        type="text"
+        placeholder="نام کاربری"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
         className="mb-2 p-2 border rounded"
       />
-      <input 
-        type="password" 
-        placeholder="رمز عبور" 
-        value={password} 
-        onChange={(e) => setPassword(e.target.value)} 
+      <input
+        type="password"
+        placeholder="رمز عبور"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
         className="mb-2 p-2 border rounded"
       />
       <button onClick={handleSignup} className="bg-blue-500 text-white p-2 rounded">

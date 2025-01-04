@@ -11,11 +11,12 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
+    const redirectPath = JSON.parse(localStorage.getItem('userredirect')) || '/';
     const storedUser = JSON.parse(localStorage.getItem('user'));
 
     if (storedUser && storedUser.username === username && storedUser.password === password) {
       dispatch(loginUser(storedUser));
-      navigate('/home');
+      navigate(redirectPath);
     } else {
       setError('نام کاربری یا رمز عبور نادرست است');
     }
@@ -24,18 +25,18 @@ const Login = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-2xl mb-4">ورود</h1>
-      <input 
-        type="text" 
-        placeholder="نام کاربری" 
-        value={username} 
-        onChange={(e) => setUsername(e.target.value)} 
+      <input
+        type="text"
+        placeholder="نام کاربری"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
         className="mb-2 p-2 border rounded"
       />
-      <input 
-        type="password" 
-        placeholder="رمز عبور" 
-        value={password} 
-        onChange={(e) => setPassword(e.target.value)} 
+      <input
+        type="password"
+        placeholder="رمز عبور"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
         className="mb-2 p-2 border rounded"
       />
       {error && <p className="text-red-500">{error}</p>}
