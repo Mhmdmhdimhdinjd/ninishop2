@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, clearCart } from '../redux/reducers/CartReducer';
 import { Button } from '@mui/material';
 import '../index.css';
+import { Link } from 'react-router-dom'
+
 
 const ShoppingBasket = () => {
     const dispatch = useDispatch();
@@ -18,7 +20,9 @@ const ShoppingBasket = () => {
                     <div key={product.id} className="min-w-[250px] max-w-[280px] w-full bg-white rounded overflow-hidden shadow-md m-2 flex flex-col justify-between" >
                         <img className="w-full max-w-[210px] h-48 p-2 pb-0 object-contain mx-auto" src={product.image} alt={product.title} />
                         <div className="px-4 py-4 flex flex-col">
-                            <div className="font-bold text-l mb-1">{product.title}</div>
+                            <Link to={`/ninishop2/product/${product.id}`}>
+                                <div className="font-bold text-l mb-1">{product.title}</div>
+                            </Link>
                             <p className="text-gray-700 text-base">تعداد: {product.quantity}</p>
                         </div>
 
@@ -35,25 +39,25 @@ const ShoppingBasket = () => {
 
             <div className='flex gap-4 mb-10'>
 
-            <Button
-                variant="contained"
-                color="error"
-                onClick={() => dispatch(clearCart())}
-                sx={{ fontFamily: 'gandom' }}
-            >
-                خالی کردن سبد خرید
-            </Button>
+                <Button
+                    variant="contained"
+                    color="error"
+                    onClick={() => dispatch(clearCart())}
+                    sx={{ fontFamily: 'gandom' }}
+                >
+                    خالی کردن سبد خرید
+                </Button>
 
 
-            <Button
-                variant="contained"
-                color="primary"
-                onClick={() => dispatch()}
-                sx={{ fontFamily: 'gandom' }}
-            >
-                تکمیل خرید
-            </Button>
-            
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={() => dispatch()}
+                    sx={{ fontFamily: 'gandom' }}
+                >
+                    تکمیل خرید
+                </Button>
+
             </div>
         </div>
     );
