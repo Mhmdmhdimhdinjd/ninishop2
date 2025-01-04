@@ -13,7 +13,6 @@ import Layout from './components/layout.jsx';
 
 function App() {
 
-  localStorage.setItem('user', {username: 'fnfjjk' , password:12345})
 
 
 
