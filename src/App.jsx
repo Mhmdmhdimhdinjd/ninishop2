@@ -24,17 +24,17 @@ function App() {
 
         <Routes>
 
-          <Route path="/ninishop2/Shoppingbasket" element={<PrivateRoute> <Layout> <ShoppingBasket /></Layout> </PrivateRoute>} />
+          <Route path="/ninishop2/Shoppingbasket" element={<Layout> <ShoppingBasket /></Layout>  }/>
 
-          <Route path="/ninishop2/Home" element={<PrivateRoute> <Layout><Home /> </Layout></PrivateRoute>} />
+          <Route path="/ninishop2/Home" element={ <Layout><Home /> </Layout> }/>
 
-          <Route path="/ninishop2/Products" element={<PrivateRoute> <Layout><Productslist /> </Layout></PrivateRoute>} />
+          <Route path="/ninishop2/Products" element= {<Layout><Productslist /> </Layout> }/>
 
-          <Route path="/ninishop2/profile" element={<PrivateRoute> <Layout><Profile /> </Layout></PrivateRoute>} />
+          <Route path="/ninishop2/profile" element={<Layout><Profile /> </Layout> }/>
 
-          <Route path="/ninishop2/product/:id" element={<PrivateRoute> <Layout><ProductDetails /> </Layout></PrivateRoute>} />
+          <Route path="/ninishop2/product/:id" element={<Layout><ProductDetails /> </Layout> }/>
 
-          <Route path="/ninishop2" element={<PrivateRoute> <Layout><Home /> </Layout></PrivateRoute>} />
+          <Route path="/ninishop2" element={<Layout> <Home /> </Layout> }/>
 
           <Route path="/ninishop2/*" element={<Page_not_found />} />
 
