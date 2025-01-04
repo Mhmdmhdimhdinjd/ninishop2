@@ -15,7 +15,7 @@ const Signup = () => {
 
     const user = { username, password };
     dispatch(registerUser(user));
-    navigate(redirectPath);
+    navigate(redirectPath || '/home');
   };
 
   return (
