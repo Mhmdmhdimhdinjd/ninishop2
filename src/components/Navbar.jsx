@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
-import {useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import '../App.css'
 import { ShoppingBasketOutlined as ShoppingBasketIcon, AccountCircleOutlined as AccountCircleIcon } from '@mui/icons-material';
 import logo from '../assets/برنج نی نی 04.png'
@@ -24,7 +24,7 @@ const Navbar = () => {
                 </Link>
 
                 <Link to="/ninishop2/Profile">
-                    <div onClick={() =>(
+                    <div onClick={() => (
                         localStorage.setItem('userredirect', location.pathname)
                     )}>
                         {<AccountCircleIcon className=' w-7 h-7' />}

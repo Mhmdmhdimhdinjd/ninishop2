@@ -7,6 +7,11 @@ img{
     display: block;
     width: 100%;
     object-fit: cover;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
 }
 
 nav {
@@ -20,19 +25,6 @@ nav {
     width: 100%;
 }
 
-.mySwiper1 .swiper-slide {
-    text-align: center;
-    /* font-size: 18px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.5rem;
-    -webkit-border-radius: 0.5rem;
-    -moz-border-radius: 0.5rem;
-    -ms-border-radius: 0.5rem;
-    -o-border-radius: 0.5rem;
-    overflow: hidden;
-}
 
 .swiper-button-next,
 .swiper-button-prev {
@@ -41,10 +33,6 @@ nav {
 
 .mySwiper1 .swiper-pagination-bullet-active {
     filter: invert(30%) sepia(80%) saturate(700%) hue-rotate(360deg);
-}
-
-.mySwiper1 .swiper-slide img {
-
 }
 
 .mySwiper2{
